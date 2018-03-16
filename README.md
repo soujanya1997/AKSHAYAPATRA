@@ -1,4 +1,4 @@
-						AKSHAYAPTRA
+						AKSHAYAPATRA
 						
 						
 Problem :    Food In-Security
