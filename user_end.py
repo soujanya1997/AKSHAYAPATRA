@@ -5,10 +5,18 @@ import googlemaps
 import socket
 
 top = Tkinter.Tk()
+top1 = Tkinter.Toplevel(top)
+top1.withdraw()
+
+
+
+
+
 
 
 def send_data():      
-    
+	top.withdraw()
+	top1.deiconify()    
 	addr = Entry1.get()
 	print(addr)
 
@@ -79,7 +87,7 @@ def send_data():
 
 
 top.geometry("600x753+703+110")
-top.title("New Toplevel 1")
+top.title("AKSHAYAPATRA DONOR")
 top.configure(background="#7e5169")
 top.configure(highlightbackground="#d92b74")
 top.configure(highlightcolor="black")
@@ -96,7 +104,24 @@ font11 = "-family {DejaVu Sans} -size 15 -weight bold -slant "  \
 font9 = "-family {DejaVu Sans} -size 10 -weight normal -slant "  \
   "roman -underline 0 -overstrike 0"
 
-        
+top1.geometry("600x753+703+110")
+top1.title("AKSHAYAPATRA DONOR")
+top1.configure(background="#7e5169")
+top1.configure(highlightbackground="#d92b74")
+top1.configure(highlightcolor="black")     
+
+Button1 = Button(top1)
+Button1.place(relx=0.18, rely=0.73, height=150, width=377)
+Button1.configure(activebackground="#d9d9d9")
+Button1.configure(background="#78d9d9")
+Button1.configure(disabledforeground="#00a3a3")
+Button1.configure(font=font11)
+Button1.configure(foreground="#640050")
+Button1.configure(highlightbackground="#00c9d9")
+Button1.configure(padx="1m")
+Button1.configure(text='''DONE''')
+#Button1.configure(command=send_data)
+
 
         
 
@@ -149,6 +174,10 @@ ADDRESS1.configure(text='''QUANTITY''')
 
         
 top.mainloop()
+
+
+
+
 
 
 
