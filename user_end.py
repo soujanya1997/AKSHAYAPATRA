@@ -53,8 +53,8 @@ def send_data():
 	print(my_location.lat)
 	print(my_location.lng)
 	    
-	host1 = socket.gethostname()
-	#host = '172.17.0.1' 
+	#host1 = socket.gethostname()
+	host1 = '172.20.53.93' 
 	port = 2004
 	BUFFER_SIZE = 2000 
 
@@ -63,7 +63,7 @@ def send_data():
 	
 	m1 = str(my_location.lat) + ' '
 	m2 = str(my_location.lng) 
-	MESSAGE = m1 + m2 
+	MESSAGE = m1 + m2 + ' ' + str(quant)
 	 
 	print(MESSAGE)
 	tcpClientA = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
@@ -149,6 +149,11 @@ ADDRESS1.configure(text='''QUANTITY''')
 
         
 top.mainloop()
+
+
+
+
+
 
 
 
