@@ -5,6 +5,8 @@ Problem :    Food In-Security
 
 Household Food security exists when all members at all time have access to enough food for an active healthy life. Individuals who are food secured do not live in hunger or fear of starvation . Food insecurity on the other hand is the situation of uncertain availability of nutritionally adequate and safe foods or limited or uncertain ability ""------ to acquire acceptable food in socially acceptable ways ------"" according to United States Dept. of Agriculture.
 
+Narendra Modi in his most recent Mann Ki Baat radio, asked his listeners: “Have you ever thought about how much food we waste?”
+
 
 Hack :     AKSHAYAPATRA
 
