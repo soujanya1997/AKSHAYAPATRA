@@ -8,20 +8,43 @@ top = Tkinter.Tk()
 top1 = Tkinter.Toplevel(top)
 top1.withdraw()
 
+global m1,m2
+
+
+def done_pressed():
+	
+	global m1,m2
+	
+	msg = m1 + ' ' + m2 + ' done'
+	
+	host1 = '172.20.53.93' 
+	port = 2004
+	
+	print(msg)
+	tcpClient = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+	tcpClient.connect((host1, port))
+	tcpClient.send(msg)     
+
+	tcpClient.close()
+	
+	top.destroy()
 
 
 
 
+def send_data(): 
 
-
-def send_data():      
-	top.withdraw()
-	top1.deiconify()    
+	global m1,m2
+	     
+    
 	addr = Entry1.get()
 	print(addr)
 
 	quant = Scale1.get()
 	print(quant)
+	
+	#top.withdraw()
+	#top1.deiconify()
 
 	'''
 	import urllib2
@@ -77,13 +100,14 @@ def send_data():
 	tcpClientA = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 	tcpClientA.connect((host1, port))
 
-	while MESSAGE != 'exit':
-	    tcpClientA.send(MESSAGE)     
-	    data = tcpClientA.recv(BUFFER_SIZE)
-	    print " Client2 received data:", data
-	    MESSAGE = raw_input("tcpClientA: Enter message to continue/ Enter exit:")
 
-	tcpClientA.close() 
+	tcpClientA.send(MESSAGE)     
+
+	tcpClientA.close()
+	
+	top.withdraw()
+	top1.deiconify()
+	
 
 
 top.geometry("600x753+703+110")
@@ -111,7 +135,7 @@ top1.configure(highlightbackground="#d92b74")
 top1.configure(highlightcolor="black")     
 
 Button1 = Button(top1)
-Button1.place(relx=0.18, rely=0.73, height=150, width=377)
+Button1.place(relx=0.18, rely=0.30, height=150, width=377)
 Button1.configure(activebackground="#d9d9d9")
 Button1.configure(background="#78d9d9")
 Button1.configure(disabledforeground="#00a3a3")
@@ -119,8 +143,8 @@ Button1.configure(font=font11)
 Button1.configure(foreground="#640050")
 Button1.configure(highlightbackground="#00c9d9")
 Button1.configure(padx="1m")
-Button1.configure(text='''DONE''')
-#Button1.configure(command=send_data)
+Button1.configure(text='''SERVED''')
+Button1.configure(command=done_pressed)
 
 
         
@@ -162,7 +186,7 @@ Scale1.configure(orient="horizontal")
 Scale1.configure(relief=RIDGE)
 Scale1.configure(sliderlength="50")
 Scale1.configure(tickinterval="1.0")
-Scale1.configure(to="10.0")
+Scale1.configure(to="5.0")
 Scale1.configure(troughcolor="#00404b")
 Scale1.configure(width=50)
 
@@ -174,16 +198,6 @@ ADDRESS1.configure(text='''QUANTITY''')
 
         
 top.mainloop()
-
-
-
-
-
-
-
-
-
-
 
 
 
