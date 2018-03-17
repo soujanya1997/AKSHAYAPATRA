@@ -1,7 +1,6 @@
 import socket 
 from threading import Thread 
 from SocketServer import ThreadingMixIn 
-import sqlite3
 from gmplot import gmplot
 import urllib2
 import webbrowser
@@ -67,11 +66,7 @@ tcpServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcpServer.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
 tcpServer.bind((TCP_IP, TCP_PORT)) 
 threads = [] 
-con=sqlite3.connect("lcddb.sqlite")
-cur=con.cursor()
-cur.execute("select * from data")
-row=cur.fetchall()
-print(row)
+
 gmap = gmplot.GoogleMapPlotter(18.554314, 73.7970365, 18.5)
 lcd_lat, lcd_lon = 18.554314, 73.7970365
 gmap.marker(lcd_lat, lcd_lon, 'black')
