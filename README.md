@@ -22,3 +22,16 @@ Even on the other side, the needy do not know who is ready to fulfill their need
 
 Due to this disconnection in the communication, there is a lot of """FOOD WASTAGE""" .
 Let's prevent it then.
+
+
+
+
+
+
+HOW TO RUN :
+
+User end :-  user_end.py
+Server end :- server1.py
+LCD end :-  moniter_Display.py
+
+
